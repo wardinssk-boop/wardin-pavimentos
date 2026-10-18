@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WARDIN PAVIMENTOS - Especialistas en Pavimentos y Morteros</title>
+<!-- Google Fonts & FontAwesome -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+--primary: #E85D04;
+--primary-hover: #D04D00;
+--dark-bg: #11161D;
+--card-bg: #1A212D;
+--accent-blue: #1E293B;
+--light-text: #F8FAFC;
+--gray-text: #94A3B8;
+--white: #FFFFFF;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Roboto', sans-serif;
+scroll-behavior: smooth;
+}
+
+body {
+background-color: var(--dark-bg);
+color: var(--light-text);
+line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo-text {
+font-family: 'Montserrat', sans-serif;
+}
+
+/* Top Bar & Header */
+header {
+background-color: rgba(17, 22, 29, 0.95);
+backdrop-filter: blur(10px);
+position: sticky;
+top: 0;
+z-index: 1000;
+border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 5%;
+max-width: 1250px;
+margin: auto;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 15px;
+text-decoration: none;
+}
+
+.logo-icon {
+width: 45px;
+height: 45px;
+background-color: #F59E0B;
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.logo-icon::after {
+content: '';
+width: 25px;
+height: 25px;
+background-color: var(--dark-bg);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.logo-text {
+font-size: 1.4rem;
+font-weight: 800;
+color: var(--white);
+letter-spacing: 1px;
+}
+
+.logo-text span {
+color: var(--primary);
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+gap: 25px;
+}
+
+.nav-links a {
+text-decoration: none;
+color: var(--light-text);
+font-weight: 500;
+font-size: 0.95rem;
+transition: color 0.3s;
+}
+
+.nav-links a:hover {
+color: var(--primary);
+}
+
+.header-contact {
+display: flex;
+align-items: center;
+gap: 10px;
+background-color: var(--primary);
+color: var(--white);
+padding: 10px 20px;
+border-radius: 4px;
+text-decoration: none;
+font-weight: 700;
+font-size: 0.9rem;
+transition: background 0.3s;
+}
+
+.header-contact:hover {
+background-color: var(--primary-hover);
+}
+
+/* Hero Section */
+.hero {
+position: relative;
+background: linear-gradient(180deg, rgba(17, 22, 29, 0.7) 0%, rgba(17, 22, 29, 0.95) 100%), url('https://i.ibb.co/k2FRFcrK/Whats-App-Image-2026-10-18-at-06-30-43.jpg') center/cover no-repeat;
+min-height: 85vh;
+display: flex;
+align-items: center;
+padding: 0 5%;
+}
+
+.hero-container {
+max-width: 1250px;
+margin: auto;
+width: 100%;
+}
+
+.hero-badge {
+display: inline-block;
+background-color: rgba(232, 93, 4, 0.15);
+color: var(--primary);
+border: 1px solid var(--primary);
+padding: 6px 16px;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 600;
+margin-bottom: 20px;
+text-transform: uppercase;
+}
+
+.hero h1 {
+font-size: 3.2rem;
+font-weight: 800;
+line-height: 1.15;
+margin-bottom: 20px;
+max-width: 750px;
+color: var(--white);
+}
+
+.hero p {
+font-size: 1.15rem;
+color: var(--gray-text);
+max-width: 600px;
+margin-bottom: 35px;
+}
+
+.hero-buttons {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+.btn-primary {
+background-color: var(--primary);
+color: var(--white);
+padding: 14px 30px;
+border-radius: 4px;
+text-decoration: none;
+font-weight: 700;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+transition: background 0.3s;
+}
+
+.btn-primary:hover {
+background-color: var(--primary-hover);
+}
+
+.btn-outline {
+background-color: transparent;
+color: var(--white);
+border: 1px solid rgba(255, 255, 255, 0.2);
+padding: 14px 30px;
+border-radius: 4px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s;
+}
+
+.btn-outline:hover {
+border-color: var(--white);
+background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Services Section */
+.services {
+padding: 100px 5%;
+max-width: 1250px;
+margin: auto;
+}
+
+.section-header {
+margin-bottom: 60px;
+}
+
+.section-subtitle {
+color: var(--primary);
+font-weight: 700;
+text-transform: uppercase;
+font-size: 0.85rem;
+letter-spacing: 1.5px;
+display: block;
+margin-bottom: 8px;
+}
+
+.section-title {
+font-size: 2.2rem;
+font-weight: 700;
+color: var(--white);
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 25px;
+}
+
+.service-card {
+background-color: var(--card-bg);
+border: 1px solid rgba(255,255,255,0.05);
+padding: 35px 30px;
+border-radius: 6px;
+transition: transform 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+transform: translateY(-5px);
+border-color: var(--primary);
+}
+
+.service-icon {
+width: 60px;
+height: 60px;
+background-color: rgba(232, 93, 4, 0.1);
+border-radius: 6px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.6rem;
+color: var(--primary);
+margin-bottom: 25px;
+}
+
+.service-card h3 {
+font-size: 1.3rem;
+margin-bottom: 12px;
+color: var(--white);
+}
+
+.service-card p {
+color: var(--gray-text);
+font-size: 0.95rem;
+}
+
+/* Portfolio / Gallery Section */
+.portfolio {
+padding: 80px 5%;
+background-color: #0D1117;
+}
+
+.portfolio-container {
+max-width: 1250px;
+margin: auto;
+}
+
+.portfolio-filters {
+display: flex;
+gap: 12px;
+margin-bottom: 40px;
+flex-wrap: wrap;
+}
+
+.filter-btn {
+background-color: var(--card-bg);
+border: 1px solid rgba(255,255,255,0.1);
+color: var(--gray-text);
+padding: 10px 22px;
+border-radius: 4px;
+font-weight: 600;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+background-color: var(--primary);
+color: var(--white);
+border-color: var(--primary);
+}
+
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+gap: 20px;
+}
+
+.gallery-item {
+position: relative;
+border-radius: 6px;
+overflow: hidden;
+aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+transform: scale(1.08);
+}
+
+/* TikTok Section */
+.tiktok-section {
+padding: 80px 5%;
+max-width: 1250px;
+margin: auto;
+text-align: center;
+}
+
+.tiktok-cards {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin-top: 40px;
+}
+
+.tiktok-card {
+background-color: var(--card-bg);
+border: 1px solid rgba(255,255,255,0.08);
+padding: 25px 35px;
+border-radius: 8px;
+text-decoration: none;
+color: var(--white);
+display: flex;
+align-items: center;
+gap: 15px;
+font-weight: 700;
+transition: background 0.3s, transform 0.3s;
+}
+
+.tiktok-card:hover {
+background-color: #000000;
+transform: translateY(-3px);
+border-color: #25F4EE;
+}
+
+.tiktok-card i {
+font-size: 1.8rem;
+}
+
+/* Contact Section */
+.contact {
+padding: 100px 5%;
+max-width: 1250px;
+margin: auto;
+}
+
+.contact-box {
+background-color: var(--card-bg);
+border-radius: 8px;
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+overflow: hidden;
+border: 1px solid rgba(255,255,255,0.05);
+}
+
+.contact-info {
+padding: 50px;
+background: linear-gradient(135deg, var(--accent-blue) 0%, var(--card-bg) 100%);
+}
+
+.contact-info h3 {
+font-size: 1.8rem;
+margin-bottom: 25px;
+color: var(--white);
+}
+
+.contact-item {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-bottom: 25px;
+color: var(--light-text);
+}
+
+.contact-item i {
+width: 40px;
+height: 40px;
+background-color: rgba(232, 93, 4, 0.15);
+color: var(--primary);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.contact-form {
+padding: 50px;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+width: 100%;
+padding: 14px;
+background-color: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 4px;
+color: var(--white);
+font-size: 0.95rem;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+outline: none;
+border-color: var(--primary);
+}
+
+/* Floating WhatsApp */
+.float-wa {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background-color: #25D366;
+color: var(--white);
+width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.8rem;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+text-decoration: none;
+z-index: 999;
+transition: transform 0.3s;
+}
+
+.float-wa:hover {
+transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+background-color: #0A0D12;
+padding: 30px 5%;
+text-align: center;
+color: var(--gray-text);
+font-size: 0.85rem;
+border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 900px) {
+.contact-box {
+grid-template-columns: 1fr;
+}
+.hero h1 {
+font-size: 2.3rem;
+}
+.nav-links {
+display: none;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Header Navigation -->
+<header>
+<nav class="navbar">
+<a href="#" class="logo">
+<div class="logo-icon"></div>
+<div class="logo-text">WARDIN <span>PAVIMENTOS</span></div>
+</a>
+<ul class="nav-links">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#tiktok">Vídeos</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+<a href="https://wa.me/34607469737" class="header-contact" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> 607 46 97 37
+</a>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="inicio">
+<div class="hero-container">
+<span class="hero-badge">Pavimentos & Morteros Profesionales</span>
+<h1>Especialistas en Pavimentos y Morteros de Alta Resistencia</h1>
+<p>Soluciones modernas y duraderas para suelos industriales, comerciales y residenciales. Hormigón impreso, fratasado y desactivado.</p>
+<div class="hero-buttons">
+<a href="https://wa.me/34607469737?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto" class="btn-primary" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> Solicitar Presupuesto
+</a>
+<a href="#servicios" class="btn-outline">Ver Servicios</a>
+</div>
+</div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="servicios">
+<div class="section-header">
+<span class="section-subtitle">Lo Que Hacemos</span>
+<h2 class="section-title">Nuestros Servicios Especializados</h2>
+</div>
+<div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+<div class="service-card">
+<div class="service-icon"><i class="fa-solid fa-cubes"></i></div>
+<h3>Hormigón Impreso</h3>
+<p>Gran variedad de estampados, colores y texturas altamente resistentes para exteriores y patios.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fa-solid fa-industry"></i></div>
+<h3>Hormigón Fratasado</h3>
+<p>Acabado liso, resistente e ideal para naves industriales, garajes y zonas de alto tráfico.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fa-solid fa-border-all"></i></div>
+<h3>Hormigón Desactivado</h3>
+<p>Superficie de árido visto, estética, duradera y con propiedades antideslizantes para exteriores.</p>
+</div>
+</div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="portfolio" id="portfolio">
+<div class="portfolio-container">
+<div class="section-header">
+<span class="section-subtitle">Galería de Proyectos</span>
+<h2 class="section-title">Nuestros Últimos Trabajos</h2>
+</div>
+
+<div class="portfolio-filters">
+<button class="filter-btn active" onclick="filterGallery('todos')">TODOS</button>
+<button class="filter-btn" onclick="filterGallery('impreso')">HORMIGÓN IMPRESO</button>
+<button class="filter-btn" onclick="filterGallery('fratasado')">HORMIGÓN FRATASADO</button>
+<button class="filter-btn" onclick="filterGallery('desactivado')">HORMIGÓN DESACTIVADO</button>
+</div>
+
+<div class="gallery-grid">
+<div class="gallery-item fratasado">
+<img src="https://i.ibb.co/k2FRFcrK/Whats-App-Image-2026-10-18-at-06-30-43.jpg" alt="Hormigón Fratasado">
+</div>
+<div class="gallery-item impreso">
+<img src="https://i.ibb.co/4ZdVz665/Whats-App-Image-2026-10-18-at-06-30-42-1.jpg" alt="Hormigón Impreso">
+</div>
+<div class="gallery-item desactivado">
+<img src="https://i.ibb.co/0jf8TYxt/Whats-App-Image-2026-10-18-at-06-30-42.jpg" alt="Hormigón Desactivado">
+</div>
+<div class="gallery-item impreso">
+<img src="https://i.ibb.co/bgWgr7S9/Whats-App-Image-2026-10-18-at-06-30-41.jpg" alt="Hormigón Exterior">
+</div>
+<div class="gallery-item desactivado">
+<img src="https://i.ibb.co/9knYN0kN/Whats-App-Image-2026-10-18-at-06-30-41-2.jpg" alt="Hormigón Desactivado">
+</div>
+<div class="gallery-item fratasado">
+<img src="https://i.ibb.co/0VfVDggD/Whats-App-Image-2026-10-18-at-06-30-41-1.jpg" alt="Pavimentos Fratasados">
+</div>
+</div>
+</div>
+</section>
+
+<!-- TikTok Video Section -->
+<section class="tiktok-section" id="tiktok">
+<span class="section-subtitle">Vídeos en Vivo</span>
+<h2 class="section-title">Mira Nuestro Trabajo en TikTok</h2>
+<div class="tiktok-cards">
+<a href="https://vt.tiktok.com/ZSg6nYV94/" target="_blank" class="tiktok-card">
+<i class="fa-brands fa-tiktok"></i> Vídeo Demostración 1
+</a>
+<a href="https://vt.tiktok.com/ZSg6nDjG6/" target="_blank" class="tiktok-card">
+<i class="fa-brands fa-tiktok"></i> Vídeo Demostración 2
+</a>
+<a href="https://vt.tiktok.com/ZSg6n4rub/" target="_blank" class="tiktok-card">
+<i class="fa-brands fa-tiktok"></i> Vídeo Demostración 3
+</a>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contacto">
+<div class="contact-box">
+<div class="contact-info">
+<h3>Contacta con Nosotros</h3>
+<p style="color: var(--gray-text); margin-bottom: 30px;">Solicita tu presupuesto sin compromiso. Atendemos tus consultas de forma rápida y directa.</p>
+
+<div class="contact-item">
+<i class="fa-solid fa-phone"></i>
+<div>
+<strong style="display:block;">Teléfono / WhatsApp</strong>
+<span>607 46 97 37</span>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="fa-brands fa-tiktok"></i>
+<div>
+<strong style="display:block;">TikTok Oficial</strong>
+<span>@elche.elx</span>
+</div>
+</div>
+
+<!-- Ubing-aw iti Lokasion a Mapa -->
+<div class="contact-item">
+<i class="fa-solid fa-location-dot"></i>
+<div>
+<strong style="display:block;">Ubicación</strong>
+<a href="https://maps.app.goo.gl/51G6Z4FWXy9xVYe68" target="_blank" style="color: var(--primary); text-decoration: none;">Ver en Google Maps</a>
+</div>
+</div>
+</div>
+
+<div class="contact-form">
+<form action="#">
+<div class="form-group">
+<input type="text" placeholder="Nombre Completo" required>
+</div>
+<div class="form-group">
+<input type="tel" placeholder="Número de Teléfono" required>
+</div>
+<div class="form-group">
+<select required>
+<option value="" disabled selected>Selecciona un servicio</option>
+<option value="impreso">Hormigón Impreso</option>
+<option value="fratasado">Hormigón Fratasado</option>
+<option value="desactivado">Hormigón Desactivado</option>
+</select>
+</div>
+<div class="form-group">
+<textarea rows="4" placeholder="Detalles de la obra o mensaje..."></textarea>
+</div>
+<button type="submit" class="btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+Enviar Solicitud
+</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/34607469737" class="float-wa" target="_blank" title="Contactar por WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2026 WARDIN PAVIMENTOS. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Gallery Filtering Script -->
+<script>
+function filterGallery(category) {
+const items = document.querySelectorAll('.gallery-item');
+const buttons = document.querySelectorAll('.filter-btn');
+
+buttons.forEach(btn => btn.classList.remove('active'));
+event.target.classList.add('active');
+
+items.forEach(item => {
+if (category === 'todos' || item.classList.contains(category)) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+}
+</script>
+</body>
+</html>
